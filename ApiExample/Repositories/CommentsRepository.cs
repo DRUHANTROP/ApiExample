@@ -29,8 +29,7 @@ namespace ApiExample.Repositories
         {
             db.Add(model);
             var publication = await db.Publications.FindAsync(model.PublicationId);
-            if (publication.Comments == null) publication.Comments = new List<Comment>() { model };
-            else publication.Comments.Add(model);
+            publication.Comments.Add(model);
             await db.SaveChangesAsync();
             return model;
         }

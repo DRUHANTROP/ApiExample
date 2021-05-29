@@ -12,7 +12,7 @@ namespace ApiExample.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string PublicationId { get; set; }
-        public ICollection<Comment> Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
         public string Content { get; set; }
         public byte[] Image { get; set; }
