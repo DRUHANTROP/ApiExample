@@ -42,7 +42,7 @@ namespace ApiExample.Controllers
 
         [HttpGet("FromPublication/{publicationId}")]
         [ProducesResponseType(200)]
-        public ActionResult<List<CommentVM>> GetComments([FromRoute][GuidId] string publicationId, int skip = 0, int take = 10)
+        public ActionResult<List<CommentVM>> GetComments([FromRoute][GuidId] string publicationId, [ForbidNegative] int skip = 0, int take = 10)
         {
             var models = comments.GetByPublication(publicationId, skip, take);
             List<CommentVM> result = new();
