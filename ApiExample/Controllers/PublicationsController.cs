@@ -49,6 +49,10 @@ namespace ApiExample.Controllers
         [ProducesResponseType(400)]
         public async Task<ActionResult<PublicationVM>> CreatePublication([FromBody] CreatePublicationVM createVM)
         {
+            if (string.IsNullOrWhiteSpace(createVM.Content) && (createVM.Image == null || createVM.Image == Array.Empty<byte>()))
+            {
+                return BadRequest();
+            }
             var created = await publications.CreateAsync(createVM.ToModel());
             return Ok(new PublicationVM().Assign(created));
         }
@@ -64,7 +68,7 @@ namespace ApiExample.Controllers
         }
 
         [HttpGet("FromDateTime")]
-        public async Task<ActionResult<List<PublicationVM>>> GetFromAsync([FromQuery] DateTime? takeFrom = null, int skip = 0, int take = 10)
+        public async Task<ActionResult<List<PublicationVM>>> GetFromAsync([FromQuery] DateTime? takeFrom = null, [ForbidNegative] int skip = 0, int take = 10)
         {
             List<PublicationVM> result = new();
 
