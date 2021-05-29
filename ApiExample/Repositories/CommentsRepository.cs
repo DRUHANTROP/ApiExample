@@ -49,7 +49,7 @@ namespace ApiExample.Repositories
 
         public List<Comment> GetByPublication(string id, int skip, int take)
         {
-            return db.Comments.Where(m => m.Publication.PublicationId == id).Skip(skip).Take(take).ToList();
+            return db.Comments.Where(m => m.PublicationId == id).Skip(skip).Take(take).ToList();
         }
 
         public async Task<long> UpvoteAsync(Comment model)
