@@ -49,6 +49,10 @@ namespace ApiExample.Controllers
         [ProducesResponseType(400)]
         public async Task<ActionResult<PublicationVM>> CreatePublication([FromBody] CreatePublicationVM createVM)
         {
+            if (string.IsNullOrWhiteSpace(createVM.Content) && (createVM.Image == null || createVM.Image == Array.Empty<byte>()))
+            {
+                return BadRequest();
+            }
             var created = await publications.CreateAsync(createVM.ToModel());
             return Ok(new PublicationVM().Assign(created));
         }
