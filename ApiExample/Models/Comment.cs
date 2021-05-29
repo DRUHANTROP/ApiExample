@@ -11,8 +11,8 @@ namespace ApiExample.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string CommentId { get; set; }
         public string Content { get; set; }
-        string PublicationId { get; set; }
-        public Publication Publication { get; set; }
+        [ForeignKey(nameof(Publication))]
+        public string PublicationId { get; set; }
 
         #endregion Public Properties
     }

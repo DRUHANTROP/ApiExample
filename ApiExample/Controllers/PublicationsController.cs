@@ -40,7 +40,7 @@ namespace ApiExample.Controllers
         {
             var publication = await publications.GetAsync(id);
             if (publication == null) return NotFound();
-            var created = await comments.CreateAsync(createCommentVM.ToModel(publication));
+            var created = await comments.CreateAsync(createCommentVM.ToModel(id));
             return Ok(new CommentVM().Assign(created));
         }
 
