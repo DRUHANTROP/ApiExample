@@ -2,7 +2,7 @@
 
 namespace ApiExample.Models
 {
-    public class PostedBase : Entity
+    public class PostedBase
     {
         #region Public Properties
 

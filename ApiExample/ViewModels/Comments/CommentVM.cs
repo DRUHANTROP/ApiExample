@@ -18,7 +18,7 @@ namespace ApiExample.ViewModels.Comments
 
         public CommentVM Assign(Comment model)
         {
-            Id = model.ID;
+            Id = model.CommentId;
             UploadedAt = model.PublicationTime;
             Author = model.AuthorPseudonym;
             Content = model.Content;

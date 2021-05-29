@@ -28,6 +28,8 @@ namespace ApiExample.Repositories
         public async Task<Comment> CreateAsync(Comment model)
         {
             db.Add(model);
+            var publication = await db.Publications.FindAsync(model.PublicationId);
+            publication.Comments.Add(model);
             await db.SaveChangesAsync();
             return model;
         }
@@ -46,7 +48,7 @@ namespace ApiExample.Repositories
 
         public List<Comment> GetByPublication(string id, int skip, int take)
         {
-            return db.Comments.Where(m => m.Publication.ID == id).Skip(skip).Take(take).ToList();
+            return db.Comments.Where(m => m.PublicationId == id).Skip(skip).Take(take).ToList();
         }
 
         public async Task<long> UpvoteAsync(Comment model)

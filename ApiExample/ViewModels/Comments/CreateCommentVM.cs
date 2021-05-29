@@ -18,13 +18,13 @@ namespace ApiExample.ViewModels.Comments
 
         #region Public Methods
 
-        public Comment ToModel(Publication publication)
+        public Comment ToModel(string publicationId)
         {
             return new Comment()
             {
                 AuthorPseudonym = Pseudonym,
                 Content = Content,
-                Publication = publication,
+                PublicationId = publicationId,
                 PublicationTime = DateTime.UtcNow,
                 Rating = 0
             };

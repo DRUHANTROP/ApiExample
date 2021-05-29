@@ -13,8 +13,6 @@ namespace ApiExample.Repositories
 
         Task<long> DownvoteAsync(Publication model);
 
-        Task<bool> ExistsAsync(string id);
-
         Task<Publication> GetAsync(string id);
 
         Task<List<Publication>> GetFromPublicationDateAsync(DateTime startFrom, int skip, int take);
