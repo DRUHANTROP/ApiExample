@@ -46,7 +46,7 @@ namespace ApiExample.Repositories
 
         public List<Comment> GetByPublication(string id)
         {
-            return db.Comments.Where(m => m.Publication.ID == id).ToList();
+            return db.Comments.Where(m => m.Publication.PublicationId == id).ToList();
         }
 
         public async Task<long> UpvoteAsync(Comment model)

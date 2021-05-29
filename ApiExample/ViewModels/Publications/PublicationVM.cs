@@ -22,7 +22,7 @@ namespace ApiExample.ViewModels.Publications
 
         public PublicationVM Assign(Publication model)
         {
-            Id = model.ID;
+            Id = model.PublicationId;
             Author = model.AuthorPseudonym;
             Content = model.Content;
             Created = model.PublicationTime;

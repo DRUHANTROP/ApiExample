@@ -41,11 +41,6 @@ namespace ApiExample.Repositories
             return updated;
         }
 
-        public async Task<bool> ExistsAsync(string id)
-        {
-            return await db.Publications.AnyAsync(m => m.ID == id);
-        }
-
         public async Task<Publication> GetAsync(string id)
         {
             return await db.Publications.FindAsync(id);
@@ -58,7 +53,7 @@ namespace ApiExample.Repositories
 
         public async Task<byte[]> GetImageAsync(string id)
         {
-            return (await db.Publications.Include(m => m.Image).Where(m => m.ID == id).FirstOrDefaultAsync())?.Image;
+            return (await db.Publications.Include(m => m.Image).Where(m => m.PublicationId == id).FirstOrDefaultAsync())?.Image;
         }
 
         public async Task<long> UpvoteAsync(Publication model)
