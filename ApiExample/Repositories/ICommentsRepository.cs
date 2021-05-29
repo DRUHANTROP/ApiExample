@@ -14,7 +14,7 @@ namespace ApiExample.Repositories
 
         Task<Comment> GetAsync(string id);
 
-        List<Comment> GetByPublication(string id);
+        List<Comment> GetByPublication(string id, int skip, int take);
 
         Task<long> UpvoteAsync(Comment model);
 
