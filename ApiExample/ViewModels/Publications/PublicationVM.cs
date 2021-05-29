@@ -8,10 +8,11 @@ namespace ApiExample.ViewModels.Publications
     {
         #region Public Properties
 
-        public ICollection<Comment> CommentsIds { get; set; }
+        public string Id { get; set; }
+        public string Author { get; set; }
+        public ICollection<Comment> Comments { get; set; }
         public string Content { get; set; }
         public DateTime Created { get; set; }
-        public string Id { get; set; }
         public bool ImageAttached { get; set; }
         public long Rating { get; set; }
 
@@ -22,11 +23,12 @@ namespace ApiExample.ViewModels.Publications
         public PublicationVM Assign(Publication model)
         {
             Id = model.ID;
+            Author = model.AuthorPseudonym;
             Content = model.Content;
             Created = model.PublicationTime;
             Rating = model.Rating;
-            ImageAttached = model.Image == null;
-            CommentsIds = model.Comments;
+            ImageAttached = model.Image != null;
+            Comments = model.Comments;
 
             return this;
         }
