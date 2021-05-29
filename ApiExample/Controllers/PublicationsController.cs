@@ -72,7 +72,7 @@ namespace ApiExample.Controllers
         {
             List<PublicationVM> result = new();
 
-            List<Publication> results = await publications.GetFromPublicationDateAsync(takeFrom ?? DateTime.Today, skip, take);
+            List<Publication> results = await publications.GetFromPublicationDateAsync(takeFrom ?? DateTime.UtcNow.AddDays(-1), skip, take);
 
             foreach (var model in results)
             {
