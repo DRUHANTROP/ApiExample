@@ -14,7 +14,6 @@ namespace ApiExample.ViewModels.Publications
         public string Content { get; set; }
         public DateTime Created { get; set; }
         public bool ImageAttached { get; set; }
-        public long Rating { get; set; }
 
         #endregion Public Properties
 
@@ -26,7 +25,6 @@ namespace ApiExample.ViewModels.Publications
             Author = model.AuthorPseudonym;
             Content = model.Content;
             Created = model.PublicationTime;
-            Rating = model.Rating;
             ImageAttached = model.Image != null;
             Comments = commentsCount;
 
