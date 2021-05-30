@@ -11,15 +11,12 @@ namespace ApiExample.Base.Repositories
 
         Task<Publication> CreateAsync(Publication model);
         void DeletePublication(string id);
-        Task<long> DownvoteAsync(Publication model);
 
         Task<Publication> GetAsync(string id);
 
         Task<List<Publication>> GetFromPublicationDateAsync(DateTime startFrom, int skip, int take);
 
         Task<byte[]> GetImageAsync(string id);
-
-        Task<long> UpvoteAsync(Publication model);
 
         #endregion Public Methods
     }
