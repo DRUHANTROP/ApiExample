@@ -51,6 +51,11 @@ namespace ApiExample.Base.Repositories
             return db.Comments.Where(m => m.PublicationId == id).Skip(skip).Take(take).ToList();
         }
 
+        public int CountByPublication(string pubId)
+        {
+            return db.Comments.Count(m => m.PublicationId == pubId);
+        }
+
         public async Task<long> UpvoteAsync(Comment model)
         {
             var updated = ++db.Comments.Update(model).Entity.Rating;

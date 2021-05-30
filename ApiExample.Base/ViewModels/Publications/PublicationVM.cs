@@ -10,7 +10,7 @@ namespace ApiExample.ViewModels.Publications
 
         public string Id { get; set; }
         public string Author { get; set; }
-        public ICollection<Comment> Comments { get; set; }
+        public int Comments { get; set; }
         public string Content { get; set; }
         public DateTime Created { get; set; }
         public bool ImageAttached { get; set; }
@@ -20,7 +20,7 @@ namespace ApiExample.ViewModels.Publications
 
         #region Public Methods
 
-        public PublicationVM Assign(Publication model)
+        public PublicationVM Assign(Publication model, int commentsCount)
         {
             Id = model.PublicationId;
             Author = model.AuthorPseudonym;
@@ -28,7 +28,7 @@ namespace ApiExample.ViewModels.Publications
             Created = model.PublicationTime;
             Rating = model.Rating;
             ImageAttached = model.Image != null;
-            Comments = model.Comments;
+            Comments = commentsCount;
 
             return this;
         }
