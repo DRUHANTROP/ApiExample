@@ -34,13 +34,6 @@ namespace ApiExample.Base.Repositories
             return model;
         }
 
-        public async Task<long> DownvoteAsync(Comment model)
-        {
-            var updated = --db.Comments.Update(model).Entity.Rating;
-            await db.SaveChangesAsync();
-            return updated;
-        }
-
         public async Task<Comment> GetAsync(string id)
         {
             return await db.Comments.FindAsync(id);
@@ -60,13 +53,6 @@ namespace ApiExample.Base.Repositories
         {
             db.Comments.Remove(db.Comments.Find(id));
             db.SaveChanges();
-        }
-
-        public async Task<long> UpvoteAsync(Comment model)
-        {
-            var updated = ++db.Comments.Update(model).Entity.Rating;
-            await db.SaveChangesAsync();
-            return updated;
         }
 
         #endregion Public Methods

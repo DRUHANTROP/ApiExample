@@ -34,13 +34,6 @@ namespace ApiExample.Base.Repositories
             return created.Entity;
         }
 
-        public async Task<long> DownvoteAsync(Publication model)
-        {
-            var updated = --db.Publications.Update(model).Entity.Rating;
-            await db.SaveChangesAsync();
-            return updated;
-        }
-
         public async Task<Publication> GetAsync(string id)
         {
             return await db.Publications.FindAsync(id);
@@ -61,13 +54,6 @@ namespace ApiExample.Base.Repositories
         public async Task<byte[]> GetImageAsync(string id)
         {
             return (await db.Publications.Include(m => m.Image).Where(m => m.PublicationId == id).FirstOrDefaultAsync())?.Image;
-        }
-
-        public async Task<long> UpvoteAsync(Publication model)
-        {
-            var updated = ++db.Publications.Update(model).Entity.Rating;
-            await db.SaveChangesAsync();
-            return updated;
         }
 
         #endregion Public Methods
