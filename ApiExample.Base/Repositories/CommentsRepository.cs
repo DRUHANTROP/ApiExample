@@ -59,6 +59,7 @@ namespace ApiExample.Base.Repositories
         public void DeleteComment(string id)
         {
             db.Comments.Remove(db.Comments.Find(id));
+            db.SaveChanges();
         }
 
         public async Task<long> UpvoteAsync(Comment model)
