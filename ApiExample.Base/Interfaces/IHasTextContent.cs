@@ -1,4 +1,4 @@
-﻿namespace ApiExample.Interfaces
+﻿namespace ApiExample.Base.Interfaces
 {
     public interface IHasTextContent
     {

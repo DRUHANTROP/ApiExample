@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ApiExample.Attributes
+namespace ApiExample.Base.Attributes
 {
     public class ForbidNegativeAttribute : RangeAttribute
     {

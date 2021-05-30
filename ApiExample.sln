@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExample", "ApiExample\ApiExample.csproj", "{466E185C-F3C3-47D3-B266-0B51A401A073}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiExample.Chat", "ApiExample\ApiExample.Chat.csproj", "{466E185C-F3C3-47D3-B266-0B51A401A073}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiExample.Base", "ApiExample.Base\ApiExample.Base.csproj", "{082FA2B8-BBA7-4502-9CA0-02DCF4AEAA5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{466E185C-F3C3-47D3-B266-0B51A401A073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{466E185C-F3C3-47D3-B266-0B51A401A073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{466E185C-F3C3-47D3-B266-0B51A401A073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{082FA2B8-BBA7-4502-9CA0-02DCF4AEAA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{082FA2B8-BBA7-4502-9CA0-02DCF4AEAA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{082FA2B8-BBA7-4502-9CA0-02DCF4AEAA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{082FA2B8-BBA7-4502-9CA0-02DCF4AEAA5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

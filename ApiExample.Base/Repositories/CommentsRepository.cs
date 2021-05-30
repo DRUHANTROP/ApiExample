@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ApiExample.DbContexts;
-using ApiExample.Models;
+using ApiExample.Base.DbContexts;
+using ApiExample.Base.Models;
 
-namespace ApiExample.Repositories
+namespace ApiExample.Base.Repositories
 {
     public class CommentsRepository : ICommentsRepository
     {

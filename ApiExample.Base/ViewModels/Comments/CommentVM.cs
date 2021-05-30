@@ -1,5 +1,5 @@
 ﻿using System;
-using ApiExample.Models;
+using ApiExample.Base.Models;
 
 namespace ApiExample.ViewModels.Comments
 {

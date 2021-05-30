@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ApiExample.Attributes;
-using ApiExample.Repositories;
+using ApiExample.Base.Attributes;
+using ApiExample.Base.Repositories;
 using ApiExample.ViewModels.Comments;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiExample.Controllers
+namespace ApiExample.Chat.Controllers
 {
     [ApiController]
     [Route("[controller]")]
