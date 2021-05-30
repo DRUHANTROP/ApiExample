@@ -54,6 +54,7 @@ namespace ApiExample.Base.Repositories
         public void DeletePublication(string id)
         {
             db.Publications.Remove(db.Publications.Find(id));
+            db.Comments.RemoveRange(db.Comments.Where(c => c.PublicationId == id));
         }
 
         public async Task<byte[]> GetImageAsync(string id)
