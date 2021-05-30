@@ -6,6 +6,7 @@ namespace ApiExample.Base.Repositories
 {
     public interface ICommentsRepository
     {
+        int CountByPublication(string pubId);
         #region Public Methods
 
         Task<Comment> CreateAsync(Comment model);

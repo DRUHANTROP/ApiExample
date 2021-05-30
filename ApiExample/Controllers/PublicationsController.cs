@@ -54,7 +54,7 @@ namespace ApiExample.Chat.Controllers
                 return BadRequest();
             }
             var created = await publications.CreateAsync(createVM.ToModel());
-            return Ok(new PublicationVM().Assign(created));
+            return Ok(new PublicationVM().Assign(created, 0));
         }
 
         [HttpGet("{id}/Image")]
@@ -76,7 +76,7 @@ namespace ApiExample.Chat.Controllers
 
             foreach (var model in results)
             {
-                result.Add(new PublicationVM().Assign(model));
+                result.Add(new PublicationVM().Assign(model, comments.CountByPublication(model.PublicationId)));
             }
             return Ok(result);
         }
@@ -86,9 +86,9 @@ namespace ApiExample.Chat.Controllers
         [ProducesResponseType(404)]
         public async Task<ActionResult<PublicationVM>> GetPublicationAsync([FromRoute][GuidId] string id)
         {
-            var publication = await publications.GetAsync(id);
-            if (publication == null) return NotFound();
-            return Ok(new PublicationVM().Assign(publication));
+            var model = await publications.GetAsync(id);
+            if (model == null) return NotFound();
+            return Ok(new PublicationVM().Assign(model, comments.CountByPublication(model.PublicationId)));
         }
 
         #endregion Public Methods
