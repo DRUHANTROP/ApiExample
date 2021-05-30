@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ApiExample.Models;
+using ApiExample.Base.Models;
 
 namespace ApiExample.ViewModels.Publications
 {

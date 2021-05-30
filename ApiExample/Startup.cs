@@ -1,5 +1,5 @@
-using ApiExample.DbContexts;
-using ApiExample.Repositories;
+using ApiExample.Base.DbContexts;
+using ApiExample.Base.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace ApiExample
+namespace ApiExample.Chat
 {
     public class Startup
     {

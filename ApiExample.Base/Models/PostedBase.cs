@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ApiExample.Models
+namespace ApiExample.Base.Models
 {
     public class PostedBase
     {

@@ -1,7 +1,7 @@
-﻿using ApiExample.Models;
+﻿using ApiExample.Base.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiExample.DbContexts
+namespace ApiExample.Base.DbContexts
 {
     public class PublicationContext : DbContext
     {

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ApiExample.Interfaces;
+using ApiExample.Base.Interfaces;
 
-namespace ApiExample.Models
+namespace ApiExample.Base.Models
 {
     public class Comment : PostedBase, IHasTextContent
     {

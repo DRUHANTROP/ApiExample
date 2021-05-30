@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ApiExample.Models;
+using ApiExample.Base.Models;
 
-namespace ApiExample.Repositories
+namespace ApiExample.Base.Repositories
 {
     public interface IPublicationsRepository
     {

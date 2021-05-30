@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace ApiExample
+namespace ApiExample.Chat
 {
     public class Program
     {
