@@ -10,7 +10,7 @@ namespace ApiExample.Base.Repositories
         #region Public Methods
 
         Task<Comment> CreateAsync(Comment model);
-
+        void DeleteComment(string id);
         Task<long> DownvoteAsync(Comment model);
 
         Task<Comment> GetAsync(string id);

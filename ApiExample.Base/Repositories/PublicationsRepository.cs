@@ -51,6 +51,13 @@ namespace ApiExample.Base.Repositories
             return await db.Publications.Where(c => c.PublicationTime > startFrom).Skip(skip).Take(take).ToListAsync();
         }
 
+        public void DeletePublication(string id)
+        {
+            db.Publications.Remove(db.Publications.Find(id));
+            db.Comments.RemoveRange(db.Comments.Where(c => c.PublicationId == id));
+            db.SaveChanges();
+        }
+
         public async Task<byte[]> GetImageAsync(string id)
         {
             return (await db.Publications.Include(m => m.Image).Where(m => m.PublicationId == id).FirstOrDefaultAsync())?.Image;

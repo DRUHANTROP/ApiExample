@@ -91,6 +91,17 @@ namespace ApiExample.Chat.Controllers
             return Ok(new PublicationVM().Assign(model, comments.CountByPublication(model.PublicationId)));
         }
 
+        [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult> DeletePublicationAsync([FromRoute][GuidId] string id)
+        {
+            var model = await publications.GetAsync(id);
+            if (model == null) return NotFound();
+            publications.DeletePublication(id);
+            return NoContent();
+        }
+
         #endregion Public Methods
     }
 }

@@ -56,6 +56,12 @@ namespace ApiExample.Base.Repositories
             return db.Comments.Count(m => m.PublicationId == pubId);
         }
 
+        public void DeleteComment(string id)
+        {
+            db.Comments.Remove(db.Comments.Find(id));
+            db.SaveChanges();
+        }
+
         public async Task<long> UpvoteAsync(Comment model)
         {
             var updated = ++db.Comments.Update(model).Entity.Rating;

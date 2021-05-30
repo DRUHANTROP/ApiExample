@@ -14,15 +14,13 @@ namespace ApiExample.Chat.Controllers
         #region Private Fields
 
         private readonly ICommentsRepository comments;
-        private readonly IPublicationsRepository publications;
 
         #endregion Private Fields
 
         #region Public Constructors
 
-        public CommentsController(IPublicationsRepository publications, ICommentsRepository comments)
+        public CommentsController(ICommentsRepository comments)
         {
-            this.publications = publications;
             this.comments = comments;
         }
 
@@ -51,6 +49,17 @@ namespace ApiExample.Chat.Controllers
                 result.Add(new CommentVM().Assign(comm));
             }
             return Ok(result);
+        }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult> DeleteCommentAsync([FromRoute][GuidId] string id)
+        {
+            var model = await comments.GetAsync(id);
+            if (model == null) return NotFound();
+            comments.DeleteComment(id);
+            return NoContent();
         }
 
         #endregion Public Methods
